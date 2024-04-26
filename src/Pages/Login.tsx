@@ -10,8 +10,8 @@ import { ButtonAuthForm } from '../Components/ButtonAuthForm';
 import { useAuth } from '../Hooks/useAuth';
 
 export const Login = () => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>('saul@gmail.com');
+  const [password, setPassword] = useState<string>('Qwerty123!');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const navigate = useNavigate();

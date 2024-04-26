@@ -50,7 +50,7 @@ export const NavBarLadingPage = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/registro">
+              <NavLink to="/login">
                 <MainButton>Registrarse</MainButton>
               </NavLink>
             </li>
