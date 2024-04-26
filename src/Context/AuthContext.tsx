@@ -35,7 +35,7 @@ const defaultValues = {
   setUserData: () => {},
   loading: false,
   setLoading: () => {},
-  darkMode: false,
+  darkMode: true,
   toggleDarkMode: () => {},
   userBalance: null,
   setUserBalance: () => {},
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [userData, setUserData] = useState<IUser | null>(null);
   const [userBalance, setUserBalance] = useState<IUserBalance | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const { darkMode, toggleDarkMode } = useLocalStorage();
   const navigate = useNavigate();
   const location = useLocation();
