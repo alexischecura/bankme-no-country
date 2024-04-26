@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import './index.css';
 import { AuthProvider } from './Context/AuthContext';
@@ -37,23 +37,33 @@ function App() {
               path="/restablecer-contrasena/:token"
               element={<ResetPasswordForm />}
             />
-            <Route element={
-              <RequireLogin>
-                <Layout/>
-              </RequireLogin>}>
-              <Route path='/datos-personales' element={<PersonalDataForm />} />
+            <Route
+              element={
+                <RequireLogin>
+                  <Layout />
+                </RequireLogin>
+              }
+            >
+              <Route path="/datos-personales" element={<PersonalDataForm />} />
               <Route element={<Dashboard />}>
                 <Route path="/dashboard" element={<DashboardStart />} />
                 <Route
                   path="/dashboard/transferencias"
                   element={<TransfersList />}
                 />
-                <Route path="/dashboard/inversiones" element={<Investments />} />
-                <Route path="/dashboard/estadisticas" element={<Statistics />} />
+                <Route
+                  path="/dashboard/inversiones"
+                  element={<Investments />}
+                />
+                <Route
+                  path="/dashboard/estadisticas"
+                  element={<Statistics />}
+                />
                 <Route path="/dashboard/configuracion" element={<Settings />} />
               </Route>
             </Route>
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <ToastNotification />
       </AuthProvider>
